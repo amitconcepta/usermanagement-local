@@ -16,6 +16,7 @@ import java.util.UUID;
 public class User extends AuditableBase {
     private static final long serialVersionUID = 1L;
 
+
     private String firstName;
     private String lastName;
     private String email;
@@ -24,12 +25,12 @@ public class User extends AuditableBase {
 
     public void mergeMetaData(User userDetailsToMerge) {
         if (userDetailsToMerge != null) {
-            userDetailsToMerge.setFirstName(userDetailsToMerge.getFirstName());
-            userDetailsToMerge.setLastName(userDetailsToMerge.getLastName());
-            userDetailsToMerge.setEmail(userDetailsToMerge.getEmail());
-            userDetailsToMerge.setPassword(userDetailsToMerge.getPassword());
-           // userDetailsToMerge.setLastModifiedBy("System");
-            userDetailsToMerge.setAppKey(UUID.randomUUID().toString().replaceAll("-", ""));
+            this.setFirstName(userDetailsToMerge.getFirstName());
+            this.setLastName(userDetailsToMerge.getLastName());
+            this.setEmail(userDetailsToMerge.getEmail());
+            this.setPassword(userDetailsToMerge.getPassword());
+            // userDetailsToMerge.setLastModifiedBy("System");
+            this.setAppKey(UUID.randomUUID().toString().replaceAll("-", ""));
         }
     }
 }

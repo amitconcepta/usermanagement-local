@@ -1,13 +1,15 @@
 package com.usermanagement.spring.microservice.reports.service;
 
 import com.usermanagement.spring.microservice.orm.User;
-import com.usermanagement.spring.microservice.orm.UserRepository;
+import com.usermanagement.spring.microservice.orm.repository.UserRepository;
 import com.usermanagement.spring.microservice.reports.exception.BadRequestException;
 import lombok.SneakyThrows;
+import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 import javax.annotation.Resource;
 
+@Service
 public class UserManagementService {
     @Resource
     private UserRepository userRepository;
@@ -31,6 +33,7 @@ public class UserManagementService {
     public User findByEmailId(String email) {
         return userRepository.findByEmailId(email);
     }
+
     @SneakyThrows
     public User findByAppKey(String appKey) {
         return userRepository.findByAppKey(appKey);
