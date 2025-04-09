@@ -13,6 +13,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query(value = "SELECT e FROM User e WHERE e.email=:email ")
     User findByEmailId(@Param("email") String email);
 
-    @Query(value = "SELECT e FROM User e WHERE e.appKey=:appKey ")
-    User findByAppKey(@Param("appKey") String appKey);
+    @Query(value = "SELECT e FROM User e WHERE e.accessKey=:accessKey ")
+    User findByAccessKey(@Param("accessKey") String accessKey);
 }

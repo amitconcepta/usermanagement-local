@@ -21,7 +21,7 @@ public class User extends AuditableBase {
     private String lastName;
     private String email;
     private String password;
-    private String appKey;
+    private String accessKey;
 
     public void mergeMetaData(User userDetailsToMerge) {
         if (userDetailsToMerge != null) {
@@ -30,7 +30,7 @@ public class User extends AuditableBase {
             this.setEmail(userDetailsToMerge.getEmail());
             this.setPassword(userDetailsToMerge.getPassword());
             // userDetailsToMerge.setLastModifiedBy("System");
-            this.setAppKey(UUID.randomUUID().toString().replaceAll("-", ""));
+            this.setAccessKey(UUID.randomUUID().toString().replaceAll("-", ""));
         }
     }
 }

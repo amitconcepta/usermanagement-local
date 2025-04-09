@@ -35,7 +35,7 @@ public class UserManagementService {
     }
 
     @SneakyThrows
-    public User findByAppKey(String appKey) {
-        return userRepository.findByAppKey(appKey);
+    public User findByAccessKey(String accessKey) {
+        return userRepository.findByAccessKey(accessKey);
     }
 }
