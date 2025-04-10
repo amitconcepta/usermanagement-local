@@ -30,7 +30,7 @@ public class User extends AuditableBase {
             this.setEmail(userDetailsToMerge.getEmail());
             this.setPassword(userDetailsToMerge.getPassword());
             // userDetailsToMerge.setLastModifiedBy("System");
-            this.setAccessKey(UUID.randomUUID().toString().replaceAll("-", ""));
+            this.setAccessKey(UUID.randomUUID().toString());
         }
     }
 }
